@@ -1,15 +1,15 @@
 import Link from 'next/link';
 
 import parseDate from '../../utils/parseDate';
-import pinnedPostProps from '../../types/pinnedPost';
+import PostContainerProps from '../../types/postContainer';
 
 import { Container, Content } from './styles';
 
-interface PinnedPostProps {
-  post: pinnedPostProps;
+interface Props {
+  post: PostContainerProps;
 }
 
-const PinnedPost: React.FC<PinnedPostProps> = ({ post }) => (
+const PostContainer: React.FC<Props> = ({ post }) => (
   <Link href={`/post/${post.node._meta.uid}`}>
     <Container>
       <Content>
@@ -27,4 +27,4 @@ const PinnedPost: React.FC<PinnedPostProps> = ({ post }) => (
   </Link>
 );
 
-export default PinnedPost;
+export default PostContainer;

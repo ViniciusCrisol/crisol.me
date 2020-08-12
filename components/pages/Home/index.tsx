@@ -1,21 +1,29 @@
-import PinnedPost from '../../PinnedPost';
-import pinnedPostProps from '../../../types/pinnedPost';
+import Link from 'next/link';
 
-import { Container, PinnedPostsContainer } from './styles';
+import PostContainer from '../../PostContainer';
+import PostContainerProps from '../../../types/postContainer';
 
-interface HomeProps {
-  posts: pinnedPostProps[];
+import { Container, PostsWrapper, ButtonContainer } from './styles';
+
+interface Props {
+  posts: PostContainerProps[];
 }
 
-const Home: React.FC<HomeProps> = ({ posts }) => {
+const Home: React.FC<Props> = ({ posts }) => {
   return (
     <Container>
       <h2>Últimos posts</h2>
-      <PinnedPostsContainer>
+      <PostsWrapper>
         {posts.map((post) => (
-          <PinnedPost post={post} key={post.node._meta.uid} />
+          <PostContainer post={post} key={post.node._meta.uid} />
         ))}
-      </PinnedPostsContainer>
+      </PostsWrapper>
+
+      <Link href='/posts'>
+        <ButtonContainer>
+          <a>posts</a>
+        </ButtonContainer>
+      </Link>
     </Container>
   );
 };

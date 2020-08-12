@@ -1,4 +1,4 @@
-export default interface pinnedPostProps {
+export default interface postContainerProps {
   node: {
     _meta: { uid: string };
     title: string;

@@ -1,16 +1,16 @@
-import pinnedPostProps from '../../../types/pinnedPost';
+import PostContainerProps from '../../../types/postContainer';
 
-import PinnedPost from '../../PinnedPost';
+import PostContainer from '../../PostContainer';
 import { Container } from './styles';
 
-interface HomeProps {
-  posts: pinnedPostProps[];
+interface Props {
+  posts: PostContainerProps[];
 }
 
-const Posts: React.FC<HomeProps> = ({ posts }) => (
+const Posts: React.FC<Props> = ({ posts }) => (
   <Container>
     {posts.map((post) => (
-      <PinnedPost post={post} key={post.node._meta.uid} />
+      <PostContainer post={post} key={post.node._meta.uid} />
     ))}
   </Container>
 );
