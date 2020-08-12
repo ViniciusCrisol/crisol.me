@@ -1,41 +1,25 @@
-import React from 'react';
 import { GetStaticPropsContext } from 'next';
-import { RichText, RichTextBlock } from 'prismic-reactjs';
+import Head from 'next/head';
+
+import PostProps from '../../types/post';
 import { fetchAPI } from '../../lib/api-prismic';
+import PostPage from '../../components/pages/Post';
 
-interface PostProps {
-  post: {
-    title: string;
-    thumbnail: {
-      url: string;
-    };
-    content: RichTextBlock[];
-  };
-}
-
-function Post({ post }: PostProps) {
-  console.log(post);
-
+export default function Post({ post }: PostProps) {
   return (
-    <div>
-      <h1>{post.title}</h1>
-
-      {RichText.asText(post.content)}
-    </div>
+    <>
+      <Head>
+        <title>{post.title} | crisol.me</title>
+        <meta name='description' content={post.description[0].text} />
+      </Head>
+      <PostPage post={post} />
+    </>
   );
 }
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
   const post = await fetchAPI(
-    `
-    query($slug: String!, $lang: String!) {
-      post(uid: $slug, lang: $lang) {
-        title
-        description
-        content
-      }
-    }
-  `,
+    `query($slug: String!, $lang: String!) { post(uid: $slug, lang: $lang) { title description content } }`,
     {
       slug: ctx.params.id,
       lang: 'pt-br',
@@ -54,19 +38,7 @@ export async function getStaticPaths() {
   const {
     allPosts: { edges },
   } = await fetchAPI(
-    `
-    query {
-      allPosts {
-        edges {
-          node {
-            _meta {
-              uid
-            }
-          }
-        }
-      }
-    }
-  `,
+    `query { allPosts { edges { node { _meta { uid } } } } } `,
     {}
   );
 
@@ -75,5 +47,3 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
-export default Post;

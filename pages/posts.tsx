@@ -1,67 +1,22 @@
-import Link from 'next/link';
 import Head from 'next/head';
 
 import { fetchAPI } from '../lib/api-prismic';
-import { Container, TitleContainer } from '../styles/Home';
+import PostsPage from '../components/pages/Posts';
 
-interface Post {
-  node: {
-    _meta: {
-      uid: string;
-    };
-    title: string;
-    thumbnail: {
-      url: string;
-    };
-    content: string;
-  };
-}
-
-interface HomeProps {
-  posts: Post[];
-}
-
-export default function Posts({ posts }: HomeProps) {
+export default function Posts({ posts }) {
   return (
-    <Container>
+    <>
       <Head>
-        <title>Rocketseat | Blog Next.JS</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Posts | crisol.me</title>
       </Head>
-
-      <TitleContainer></TitleContainer>
-
-      <ul>
-        {posts?.map(({ node }) => (
-          <li key={`post-${node._meta.uid}`}>
-            <Link href={`posts/${node._meta.uid}`}>
-              <a>{node.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Container>
+      <PostsPage posts={posts} />
+    </>
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await fetchAPI(
-    `
-    query {
-      allPosts {
-        edges {
-          node{
-            _meta {
-              uid
-            }
-            title
-            content
-            description
-          }
-        }
-      }
-    }
-  `,
+    `query { allPosts { edges { node { _meta { uid } title description categories created_at } } } }`,
     {}
   );
 

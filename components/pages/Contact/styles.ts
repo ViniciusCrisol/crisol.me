@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 650px;
-  width: 100%;
+  margin: 0 auto;
+  max-width: 710px;
 
   h1 {
     font-size: 24px;
     margin-top: 32px;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   p {
     margin-top: 8px;
-    font-size: 18px;
 
     a {
       color: var(--main);

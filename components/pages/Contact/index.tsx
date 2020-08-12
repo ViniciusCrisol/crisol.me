@@ -7,8 +7,6 @@ const github = 'https://github.com/ViniciusCrisol';
 
 const Contact: React.FC = () => (
   <Container>
-    <h2>Entre contato</h2>
-
     <h1>Sobre mim</h1>
     <p>
       Oi, meu nome é Vinícius Crisol, trabalho e estudo programação há um bom

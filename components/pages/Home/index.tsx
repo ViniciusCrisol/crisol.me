@@ -1,4 +1,4 @@
-import PinnedPost from './PinnedPost';
+import PinnedPost from '../../PinnedPost';
 import pinnedPostProps from '../../../types/pinnedPost';
 
 import { Container, PinnedPostsContainer } from './styles';

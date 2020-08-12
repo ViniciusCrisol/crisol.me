@@ -25,7 +25,8 @@ export const Content = styled.div`
 
   section {
     h2 {
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: normal;
     }
 
     p {
@@ -37,20 +38,15 @@ export const Content = styled.div`
 
   footer {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
 
     span {
-      display: block;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--gray);
 
       &.label {
         color: var(--main-opacity);
-      }
-
-      & + span {
-        color: var(--text);
       }
     }
   }

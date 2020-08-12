@@ -2,37 +2,21 @@ import Head from 'next/head';
 
 import { fetchAPI } from '../lib/api-prismic';
 import HomePage from '../components/pages/Home';
-import pinnedPostProps from '../types/pinnedPost';
 
-interface HomeProps {
-  posts: pinnedPostProps[];
+export default function Home({ posts }) {
+  return (
+    <>
+      <Head>
+        <title>Home | crisol.me</title>
+      </Head>
+      <HomePage posts={posts} />
+    </>
+  );
 }
 
-const Home: React.FC<HomeProps> = ({ posts }) => (
-  <>
-    <Head>
-      <title>Home | crisol.me</title>
-    </Head>
-    <HomePage posts={posts} />
-  </>
-);
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await fetchAPI(
-    `query { 
-      allPosts (last: 4) {
-        edges{
-          node{
-            _meta{
-            uid
-            }
-            title
-            description
-            categories
-            created_at
-          }
-        }
-      }
-    }`,
+    `query { allPosts (last: 4) { edges{ node{ _meta{ uid } title description categories created_at } } } }`,
     {}
   );
 
@@ -42,5 +26,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-export default Home;
