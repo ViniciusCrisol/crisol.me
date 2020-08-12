@@ -6,7 +6,11 @@ export const Container = styled.article`
 
   h1,
   h3 {
-    margin: 16px 0;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin-top: 48px;
   }
 
   img {
@@ -17,7 +21,7 @@ export const Container = styled.article`
     width: 100%;
 
     padding: 10px;
-    margin: 30px auto;
+    margin: 12px auto;
     border-left: 3px solid var(--main);
     background-color: rgb(238, 238, 238);
   }
