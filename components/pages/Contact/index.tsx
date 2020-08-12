@@ -23,7 +23,7 @@ const Contact: React.FC = () => (
 
     <h1>Contato pessoal</h1>
     <p>
-      Email: vinicius.crisol@etec.sp.gov.br
+      Email: vinicius.crisol@hotmail.com
       <br />
       <a href={linkedin} target='_blank'>
         Linkedin
