@@ -19,7 +19,6 @@ function Post({ post }: PostProps) {
   return (
     <div>
       <h1>{post.title}</h1>
-      <img width='200' src={post.thumbnail.url} alt='' />
 
       {RichText.asText(post.content)}
     </div>

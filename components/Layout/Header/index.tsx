@@ -16,7 +16,7 @@ function Header() {
 
         <section>
           <Link href='/contact'>
-            <a>contact</a>
+            <a>contato</a>
           </Link>
         </section>
       </main>

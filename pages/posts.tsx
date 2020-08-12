@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { Container, TitleContainer } from '../styles/Home';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import { fetchAPI } from '../lib/api-prismic';
+import { Container, TitleContainer } from '../styles/Home';
 
 interface Post {
   node: {
@@ -35,10 +35,7 @@ export default function Home({ posts }: HomeProps) {
         {posts?.map(({ node }) => (
           <li key={`post-${node._meta.uid}`}>
             <Link href={`posts/${node._meta.uid}`}>
-              <a>
-                <img width='100' src={node.thumbnail.url} />
-                {node.title}
-              </a>
+              <a>{node.title}</a>
             </Link>
           </li>
         ))}
@@ -60,6 +57,7 @@ export async function getServerSideProps() {
             title
             thumbnail
             content
+            description
           }
         }
       }
