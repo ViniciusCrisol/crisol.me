@@ -31,7 +31,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     query($slug: String!, $lang: String!) {
       post(uid: $slug, lang: $lang) {
         title
-        thumbnail
+        description
         content
       }
     }

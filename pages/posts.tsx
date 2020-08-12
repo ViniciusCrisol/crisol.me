@@ -21,7 +21,7 @@ interface HomeProps {
   posts: Post[];
 }
 
-export default function Home({ posts }: HomeProps) {
+export default function Posts({ posts }: HomeProps) {
   return (
     <Container>
       <Head>
@@ -55,7 +55,6 @@ export async function getServerSideProps() {
               uid
             }
             title
-            thumbnail
             content
             description
           }

@@ -24,7 +24,7 @@ const PinnedPost: React.FC<PinnedPostProps> = ({ post }) => {
               <span>Vinícius Crisol</span>
             </div>
 
-            <div>ReactJs, Node</div>
+            <span className='label'>{post.node.categories}</span>
           </footer>
         </Content>
       </Container>

@@ -8,9 +8,31 @@ interface HomeProps {
   posts: pinnedPostProps[];
 }
 
+const Home: React.FC<HomeProps> = ({ posts }) => (
+  <>
+    <Head>
+      <title>Home | crisol.me</title>
+    </Head>
+    <HomePage posts={posts} />
+  </>
+);
 export async function getServerSideProps() {
   const posts = await fetchAPI(
-    `query { allPosts (last: 5) { edges { node{ _meta { uid } title description thumbnail created_at } } } }`,
+    `query { 
+      allPosts (last: 4) {
+        edges{
+          node{
+            _meta{
+            uid
+            }
+            title
+            description
+            categories
+            created_at
+          }
+        }
+      }
+    }`,
     {}
   );
 
@@ -20,16 +42,5 @@ export async function getServerSideProps() {
     },
   };
 }
-
-const Home: React.FC<HomeProps> = ({ posts }) => {
-  return (
-    <>
-      <Head>
-        <title>Home - crisol.me</title>
-      </Head>
-      <HomePage posts={posts} />
-    </>
-  );
-};
 
 export default Home;

@@ -50,10 +50,11 @@ export const Container = styled.header`
       display: flex;
       align-items: center;
 
-      a {
+      > a {
         font-size: 16px;
-        color: var(--white);
+        color: var(--text);
 
+        margin-left: 16px;
         position: relative;
         transition: color 200ms;
 
@@ -67,10 +68,10 @@ export const Container = styled.header`
 
           content: '';
           transition: 200ms;
-          background-color: var(--menu-text);
         }
 
-        &:hover {
+        &:hover,
+        &:active {
           color: var(--main);
 
           &::after {

@@ -15,6 +15,10 @@ function Header() {
         </Link>
 
         <section>
+          <Link href='/posts'>
+            <a>posts</a>
+          </Link>
+
           <Link href='/contact'>
             <a>contato</a>
           </Link>

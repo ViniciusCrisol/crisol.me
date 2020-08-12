@@ -25,7 +25,7 @@ body{
 }
 
 body,input, button{
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text);
   font-family: --apple-system, sans-serif;
 }

@@ -31,21 +31,25 @@ export const Content = styled.div`
     p {
       flex: 1;
       margin: 8px 0;
+      color: var(--gray);
     }
   }
 
   footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
     span {
       display: block;
-      font-size: 12px;
+      font-size: 14px;
       color: var(--gray);
 
+      &.label {
+        color: var(--main-opacity);
+      }
+
       & + span {
-        font-size: 14px;
         color: var(--text);
       }
     }
