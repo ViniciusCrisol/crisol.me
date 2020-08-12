@@ -4,7 +4,8 @@ export const Container = styled.article`
   margin: 0 auto;
   max-width: 710px;
 
-  h1 {
+  h1,
+  h2 {
     margin: 16px 0;
   }
 
