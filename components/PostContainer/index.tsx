@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PostContainer: React.FC<Props> = ({ post }) => (
-  <Link href={`/post/${post.node._meta.uid}`}>
+  <Link href={`/post/[id]`} as={`/post/${post.node._meta.uid}`}>
     <Container>
       <Content>
         <section>

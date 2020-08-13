@@ -5,6 +5,7 @@ const Contact: React.FC = () => (
   <>
     <Head>
       <title>Contato | crisol.me</title>
+      <meta name='description' content='Entre em contato | Vinícius Crisol' />
     </Head>
     <ContactPage />
   </>

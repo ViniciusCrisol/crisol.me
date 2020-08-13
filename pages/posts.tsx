@@ -8,6 +8,12 @@ export default function Posts({ posts }) {
     <>
       <Head>
         <title>Posts | crisol.me</title>
+        <meta
+          name='description'
+          content={`crisol.me${posts.map(
+            (post) => ` | ${post.node.title} | ${post.node.categories}`
+          )}`}
+        />
       </Head>
       <PostsPage posts={posts} />
     </>
