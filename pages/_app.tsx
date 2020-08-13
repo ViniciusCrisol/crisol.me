@@ -1,12 +1,21 @@
+import Head from 'next/head';
+
 import GlobalStyles from '../styles/global';
 import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
+    <>
+      <Head>
+        <link rel='shortcut icon' href='/favicon.ico' />
+      </Head>
+
       <GlobalStyles />
-    </Layout>
+
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 
