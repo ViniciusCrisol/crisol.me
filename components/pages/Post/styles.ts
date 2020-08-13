@@ -25,5 +25,9 @@ export const Container = styled.article`
     margin: 12px auto;
     border-left: 3px solid var(--main);
     background-color: rgb(238, 238, 238);
+
+    @media (max-width: 660px) {
+      white-space: normal;
+    }
   }
 `;
