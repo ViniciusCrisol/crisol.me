@@ -21,6 +21,7 @@ export const Container = styled.article`
     width: 100%;
 
     padding: 10px;
+    font-size: 15px;
     margin: 12px auto;
     border-left: 3px solid var(--main);
     background-color: rgb(238, 238, 238);
