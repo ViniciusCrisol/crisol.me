@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { Container } from './styles';
 
-const Error404: React.FC = () => (
-  <Container>
-    <h1>404</h1>
-  </Container>
-);
-
-export default Error404;
+export default function Error404() {
+  return (
+    <Container>
+      <h1>404</h1>
+    </Container>
+  );
+}

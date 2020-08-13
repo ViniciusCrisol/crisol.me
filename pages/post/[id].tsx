@@ -1,9 +1,18 @@
-import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-
-import PostProps from '../../types/post';
+import { GetStaticPropsContext } from 'next';
+import { RichTextBlock } from 'prismic-reactjs';
 import { fetchAPI } from '../../lib/api-prismic';
 import PostPage from '../../components/pages/Post';
+
+interface PostProps {
+  post: {
+    title: string;
+    content: RichTextBlock[];
+    description: {
+      text: string;
+    }[];
+  };
+}
 
 export default function Post({ post }: PostProps) {
   return (

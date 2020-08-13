@@ -1,15 +1,8 @@
 import Link from 'next/link';
-
 import PostContainer from '../../PostContainer';
-import PostContainerProps from '../../../types/postContainer';
-
 import { Container, PostsWrapper, ButtonContainer } from './styles';
 
-interface Props {
-  posts: PostContainerProps[];
-}
-
-const Home: React.FC<Props> = ({ posts }) => {
+export default function Home({ posts }) {
   return (
     <Container>
       <h2>Últimos posts</h2>
@@ -26,6 +19,4 @@ const Home: React.FC<Props> = ({ posts }) => {
       </Link>
     </Container>
   );
-};
-
-export default Home;
+}

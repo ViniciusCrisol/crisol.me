@@ -1,7 +1,16 @@
 import Head from 'next/head';
-
 import { fetchAPI } from '../lib/api-prismic';
 import HomePage from '../components/pages/Home';
+
+interface Post {
+  node: {
+    _meta: { uid: string };
+    title: string;
+    created_at: string;
+    categories: string;
+    description: { text: string };
+  };
+}
 
 export default function Home({ posts }) {
   return (
@@ -11,7 +20,7 @@ export default function Home({ posts }) {
         <meta
           name='description'
           content={`crisol.me${posts.map(
-            (post) => ` | ${post.node.title} | ${post.node.categories}`
+            (post: Post) => ` | ${post.node.title} | ${post.node.categories}`
           )}`}
         />
       </Head>

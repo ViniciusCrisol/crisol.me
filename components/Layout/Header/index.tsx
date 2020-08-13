@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import { FiBookmark } from 'react-icons/fi';
-
 import { Container } from './styles';
 
-function Header() {
+export default function Header() {
   return (
     <Container>
       <main>
@@ -27,5 +26,3 @@ function Header() {
     </Container>
   );
 }
-
-export default Header;
