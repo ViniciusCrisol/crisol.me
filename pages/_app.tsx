@@ -1,9 +1,8 @@
 import Head from 'next/head';
-
-import GlobalStyles from '../styles/global';
 import Layout from '../components/Layout';
+import GlobalStyles from '../styles/global';
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -18,5 +17,3 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-export default MyApp;
