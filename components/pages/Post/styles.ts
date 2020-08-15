@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { appearFromBottom } from '../../../styles/animations';
 
 export const Container = styled.article`
   margin: 0 auto;
   max-width: 710px;
+  animation: ${appearFromBottom} 1s;
 
   h1,
   h3 {

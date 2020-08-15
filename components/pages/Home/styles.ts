@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { appearFromBottom } from '../../../styles/animations';
 
 export const Container = styled.div`
+  animation: ${appearFromBottom} 1s;
+
   h2 {
     width: 100%;
   }

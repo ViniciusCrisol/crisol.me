@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { appearFromBottom } from '../../../styles/animations';
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 710px;
+  animation: ${appearFromBottom} 1s;
 
-  h1 {
-    font-size: 24px;
+  h2 {
+    font-size: 20px;
     margin-top: 32px;
 
     &:first-child {

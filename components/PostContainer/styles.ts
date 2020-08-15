@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { appearFromLeft } from '../../styles/animations';
 
 export const Container = styled.a`
   width: 100%;
   height: 160px;
+  animation: ${appearFromLeft} 1s;
 
   display: flex;
   cursor: pointer;
@@ -17,6 +19,7 @@ export const Container = styled.a`
 `;
 
 export const Content = styled.div`
+  flex: 1;
   padding: 16px;
 
   display: flex;
