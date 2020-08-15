@@ -4,6 +4,7 @@ import { appearFromLeft } from '../../styles/animations';
 export const Container = styled.a`
   width: 100%;
   height: 160px;
+
   animation: ${appearFromLeft} 1s;
 
   display: flex;

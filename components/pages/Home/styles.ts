@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { appearFromBottom } from '../../../styles/animations';
+import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
-  animation: ${appearFromBottom} 1s;
+  animation: ${fadeIn} 0.5s;
 
   h2 {
     width: 100%;
