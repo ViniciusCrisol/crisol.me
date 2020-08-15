@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { appearFromBottom } from '../../../styles/animations';
+import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 710px;
-  animation: ${appearFromBottom} 1s;
+  animation: ${fadeIn} 1s;
 
   h2 {
     font-size: 20px;
