@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import { FiBookmark } from 'react-icons/fi';
+
+import Link from '../Link';
 import { Container } from './styles';
 
 export default function Header() {

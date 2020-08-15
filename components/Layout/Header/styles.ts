@@ -70,7 +70,8 @@ export const Container = styled.header`
           transition: 200ms;
         }
 
-        &:hover {
+        &:hover,
+        &.active {
           color: var(--main);
 
           &::after {
