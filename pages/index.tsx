@@ -31,7 +31,21 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = await fetchAPI(
-    `query { allPosts (last: 4) { edges{ node{ _meta{ uid } title description categories created_at } } } }`,
+    `{
+      allPosts(last: 4, sortBy: created_at_DESC) {
+        edges {
+          node {
+            _meta {
+              uid
+            }
+            title
+            description
+            categories
+            created_at
+          }
+        }
+      }
+    }`,
     {}
   );
 

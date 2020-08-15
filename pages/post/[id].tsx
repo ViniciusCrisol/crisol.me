@@ -47,7 +47,17 @@ export async function getStaticPaths() {
   const {
     allPosts: { edges },
   } = await fetchAPI(
-    `query { allPosts { edges { node { _meta { uid } } } } } `,
+    `{
+      allPosts {
+        edges {
+          node {
+            _meta {
+              uid
+            }
+          }
+        }
+      }
+    }`,
     {}
   );
 

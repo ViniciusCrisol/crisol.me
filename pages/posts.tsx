@@ -31,7 +31,22 @@ export default function Posts({ posts }) {
 
 export async function getStaticProps() {
   const posts = await fetchAPI(
-    `query { allPosts { edges { node { _meta { uid } title description categories created_at } } } }`,
+    `{
+      allPosts {
+        edges {
+          node {
+            _meta {
+              uid
+            }
+            title
+            description
+            categories
+            created_at
+          }
+        }
+      }
+    }
+    `,
     {}
   );
 
