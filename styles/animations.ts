@@ -3,7 +3,7 @@ import { keyframes } from 'styled-components';
 export const appearFromLeft = keyframes`
 from {
   opacity: 0;
-  transform: translateX(-15px)
+  transform: translateX(-20px)
 }
 to {
   opacity: 1;
@@ -14,7 +14,7 @@ to {
 export const appearFromBottom = keyframes`
 from {
   opacity: 0;
-  transform: translateY(15px)
+  transform: translateY(20px)
 }
 to {
   opacity: 1;
@@ -28,5 +28,14 @@ from {
 }
 to {
   opacity: 1;
+}
+`;
+
+export const pushFromBottom = keyframes`
+from {
+  transform: translateY(20px)
+}
+to {
+  transform: translateY(0)
 }
 `;

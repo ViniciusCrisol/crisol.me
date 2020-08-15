@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { fadeIn } from '../../../styles/animations';
+import { fadeIn, pushFromBottom } from '../../../styles/animations';
 
 export const Container = styled.div`
-  animation: ${fadeIn} 0.5s;
+  animation: ${pushFromBottom} 1s;
 
   h2 {
+    animation: ${fadeIn} 1s;
     width: 100%;
   }
 `;
