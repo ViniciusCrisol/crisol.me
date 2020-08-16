@@ -32,7 +32,7 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
   const posts = await fetchAPI(
     `{
-      allPosts(last: 4, sortBy: created_at_DESC) {
+      allPosts (sortBy: created_at_DESC) {
         edges {
           node {
             _meta {
