@@ -8,11 +8,16 @@ export const Container = styled.article`
 
   h1,
   h3 {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
+  }
+
+  p {
+    margin: 6px 0;
+    display: inline-block;
   }
 
   h3 {
-    margin-top: 48px;
+    margin-top: 28px;
   }
 
   img {
